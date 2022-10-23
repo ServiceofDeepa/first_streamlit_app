@@ -56,7 +56,7 @@ streamlit.header("The fruit load list contains :")
 def get_fruit_load_list():
     with my_cnx.cursor() as my_cur:   
         my_cur.execute("SELECT * from FRUIT_LOAD_LIST")
-        return my_cur.fetch_All()
+        return my_cur.fetchAll()
 
 #Add a button to load the fruit
 if streamlit.button ('Get Fruit Load List'):
