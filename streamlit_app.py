@@ -44,10 +44,6 @@ try:
                        
 except URLError as e:
    streamlit.error() 
- 
-
-#Dont run anything past here while we troubleshoot
-#streamlit.stop();
 
 # import snowflake.connector
 
@@ -67,6 +63,9 @@ if streamlit.button ('Get Fruit Load List'):
 #Allow the end user to add a fruit to the list
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','Jackfruit')
 streamlit.write('Thanks for adding ', add_my_fruit)
+
+#Dont run anything past here while we troubleshoot
+streamlit.stop();
 
 #This will not work correctly but just go with it for now
 #my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from streamlit')")
